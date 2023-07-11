@@ -1,9 +1,10 @@
-
-
+import Task from "./components/task"
+import TextContent from "./components/task-content"
 export default function Home() {
   return (
     <main className="">
-      <div>hello world</div>
+    
+      <TextContent/>
     </main>
   )
 }
