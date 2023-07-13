@@ -19,7 +19,7 @@ class TodosStore {
       id: Math.max(0, Math.max(...this.todosList.map(({ id }) => id))) + 1,
       title: "",
       discription:"",
-      status: "Todo",
+      status: "",
     };
   }
 
@@ -31,7 +31,9 @@ class TodosStore {
     this.todosList.push(this.todo);
     this.todo = this.resetTodoData();
     console.log(this.todosList);
+    console.log(this.todo,"todo");
   }
+  
 }
 
 const todosStore = new TodosStore();
