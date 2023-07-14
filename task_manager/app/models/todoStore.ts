@@ -34,8 +34,19 @@ class TodosStore {
     this.todo = this.resetTodoData();
     localStorage.setItem("taskData",JSON.stringify(this.todosList))
   }
-  updateTodo(){
-
+  setUpdateId(id:number){
+    this.todo.id=id;
+   let data= this.todosList.filter((el)=>el.id==id);
+   this.todo.title=data[0].title;
+   this.todo.discription=data[0].discription;
+   this.todo.status=data[0].status;
+  }
+  updateTodo() {
+    this.todosList = this.todosList.map((todo) =>
+      todo.id === this.todo.id ? this.todo : todo
+    );
+    this.todo = this.resetTodoData();
+    localStorage.setItem("taskData", JSON.stringify(this.todosList));
   }
   deleteTodo(id: number) {
     this.todosList = this.todosList.filter((todo) => todo.id !== id);
