@@ -1,5 +1,17 @@
 # Task_manager
 
+
+# tech Stack 
+
+* Next.js
+* JavaScript
+* TailwindCss
+* Mobex state tree
+* Typescript 
+* Git Hub
+  
+# Installation 
+
 * git clone "wirtie a url of git repository" 
 * cd "folder name"
 * npm i " to install all the pacages "
