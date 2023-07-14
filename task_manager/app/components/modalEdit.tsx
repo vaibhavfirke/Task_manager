@@ -23,7 +23,7 @@ const Edit: React.FC<AddProps> = ({ func }) => {
       
     }
     return (
-        <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div  className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
   
   <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
@@ -35,7 +35,7 @@ const Edit: React.FC<AddProps> = ({ func }) => {
           <div className="sm:flex sm:items-start w-full">
             
             <div className="mt-3 w-full text-center sm:ml-4 sm:mt-0 sm:text-left">
-              <h3 className="text-base font-semibold leading-6 text-gray-900" id="modal-title">Add Task</h3>
+              <h3 className="text-base font-semibold leading-6 text-gray-900" id="modal-title">Update Task</h3>
               <div className="mt-2 w-full m-auto flex flex-col gap-6 ">
 
                 <input value={todosStore.todo.title} onChange={(e)=>todosStore.todo.title=e.target.value} type="text" placeholder="Title" className="h-10 w-full placeholder:italic placeholder:text-slate-400 block bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm" />
