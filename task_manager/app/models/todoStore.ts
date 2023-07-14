@@ -12,7 +12,7 @@ export interface ITodoModel {
 
 class TodosStore {
   storageData=localStorage.getItem("taskData");
-  todosList: ITodoModel[] =this.storageData? JSON.parse(this.storageData) : [];
+  todosList: ITodoModel[] =this.storageData?  JSON.parse(this.storageData) : [];
   todo: ITodoModel = this.resetTodoData();
 
   resetTodoData() {
@@ -32,7 +32,8 @@ class TodosStore {
   addTodo() {
     this.todosList.push(this.todo);
     this.todo = this.resetTodoData();
-    localStorage.setItem("taskData",JSON.stringify(this.todosList))
+    typeof window !== "undefined" ? localStorage.setItem("taskData",JSON.stringify(this.todosList)):undefined;
+
   }
   setUpdateId(id:number){
     this.todo.id=id;
@@ -46,11 +47,11 @@ class TodosStore {
       todo.id === this.todo.id ? this.todo : todo
     );
     this.todo = this.resetTodoData();
-    localStorage.setItem("taskData", JSON.stringify(this.todosList));
+     typeof window !== "undefined" ? localStorage.setItem("taskData",JSON.stringify(this.todosList)):undefined;
   }
   deleteTodo(id: number) {
     this.todosList = this.todosList.filter((todo) => todo.id !== id);
-    localStorage.setItem("taskData",JSON.stringify(this.todosList));
+     typeof window !== "undefined" ? localStorage.setItem("taskData",JSON.stringify(this.todosList)):undefined;
   };
 }
 

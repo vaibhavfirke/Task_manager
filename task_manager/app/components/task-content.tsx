@@ -2,7 +2,7 @@
 import Task from "./task";
 import { observer } from "mobx-react-lite";
 import todosStore, { ITodoModel } from "../models/todoStore";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import dynamic from "next/dynamic";
 
 const Add = dynamic(() => import("./modalAdd"));
