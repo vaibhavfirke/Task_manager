@@ -9,8 +9,17 @@ type AddProps = {
 
 const Add: React.FC<AddProps> = ({ func }) => {
     const handleClick=()=>{
-      todosStore.addTodo();
-      func();
+      if(todosStore.todo.title==""||todosStore.todo.discription==""||todosStore.todo.status==""){
+         alert("Enter All The Details")
+      }else{
+        todosStore.addTodo();
+        alert("Task Added Sucessfully!");
+        setTimeout(()=>{
+          func();
+        },100)
+        
+
+      }
     }
     return (
         <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
